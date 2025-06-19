@@ -10,9 +10,9 @@ let Deck = [];
 
 function startGame() {
     createAndDistributeCards();
-  drawCrads(Sam,2)
-  drawCrads(Dealer,2)
-  console.log('sam', Sam, 'dealer', Dealernode )
+  drawCards(Sam,2);
+  drawCards(Dealer,2);
+  console.log('sam', Sam, 'dealer', Dealer)
 }
 
 function drawCards(arr, cards){
