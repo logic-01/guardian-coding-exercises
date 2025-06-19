@@ -10,6 +10,16 @@ let Deck = [];
 
 function startGame() {
     createAndDistributeCards();
+  drawCrads(Sam,2)
+  drawCrads(Dealer,2)
+  console.log('sam', Sam, 'dealer', Dealernode )
+}
+
+function drawCards(arr, cards){
+  while(cards!==0){
+    arr.push(Deck.shift());
+    cards--;
+  }
 }
 
 function createAndDistributeCards() {
