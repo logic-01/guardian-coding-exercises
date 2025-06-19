@@ -14,16 +14,16 @@ function startGame() {
     drawCards(Dealer, 2);  // Make sure this is drawCards, not drawCrads
   const isDealerTotalGreaterThan21 = isBlackJack(Dealer);
   const isSamTotalGreaterThan21 = isBlackJack(Sam);
+    console.log('sam', Sam, 'dealer', Dealer);
   if(!isSamTotalGreaterThan21 && !isDealerTotalGreaterThan21){
     //sam continue
   } else {
     isSamTotalGreaterThan21 ? console.log('sam wins!') : console.log('dealer wins!')
   }
-    console.log('sam', Sam, 'dealer', Dealer);
 }
 
 function isBlackJack(arr){
-  return arr.reduce(acc, curr =>acc+curr, 0)>21 ? true:false
+  return arr.reduce((acc, curr )=>acc+curr, 0)>21 ? true:false
 }
 
 function drawCards(arr, cards) {
