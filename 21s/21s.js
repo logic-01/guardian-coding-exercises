@@ -17,6 +17,7 @@ function startGame() {
     console.log('sam', Sam, 'dealer', Dealer);
   if(!isSamTotalGreaterThan21 && !isDealerTotalGreaterThan21){
     //sam continue
+    console.log('sam will continue')
   } else {
     isSamTotalGreaterThan21 ? console.log('sam wins!') : console.log('dealer wins!')
   }
