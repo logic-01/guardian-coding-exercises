@@ -6,11 +6,27 @@
 
 const Sam =[];
 const Dealer =[];
-const Deck=[]
+const Deck=[];
 function startGame(){
-
+createAndDistributeCards()
 }
 
 function createAndDistributeCards(){
-  
+  const totalCardOfAKind = 4;
+  for(let i=2;i<=14;i++){
+    Deck.concat(new Array(totalCardOfAKind).fill(i));
+  }
+  randomizeArray(Deck);
+  console.log(Deck);
+}
+
+function randomizeArray(arr){
+  currentIndex=arr.length-1;
+
+  while(currrentIndex!=0){
+    const randomIndex = Math.floor(Math.random()*currentIndex);
+    currentIndex--;
+    [arr[currentIndex], arr[randomIndex]]=[arr[randomIndex], arr[currentIndex]];
+  }
+  return arr;
 }
