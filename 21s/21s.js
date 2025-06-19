@@ -4,29 +4,34 @@
 //has 21? game end, the player having 21 won.
 //sam starts drawing the cards till total is 17 or higher
 
-const Sam =[];
-const Dealer =[];
-const Deck=[];
-function startGame(){
-createAndDistributeCards()
+const Sam = [];
+const Dealer = [];
+let Deck = [];
+
+function startGame() {
+    createAndDistributeCards();
 }
 
-function createAndDistributeCards(){
-  const totalCardOfAKind = 4;
-  for(let i=2;i<=14;i++){
-    Deck.concat(new Array(totalCardOfAKind).fill(i));
-  }
-  randomizeArray(Deck);
-  console.log(Deck);
+function createAndDistributeCards() {
+    const totalCardOfAKind = 4;
+    for (let i = 2; i <= 14; i++) {
+        // Fix: Use push with spread operator instead of concat
+        Deck.push(...new Array(totalCardOfAKind).fill(i));
+    }
+    randomizeArray(Deck);
+    console.log("Shuffled deck:", Deck);
 }
 
-function randomizeArray(arr){
-  currentIndex=arr.length-1;
+function randomizeArray(arr) {
+    let currentIndex = arr.length - 1; // Fix: declare currentIndex properly
 
-  while(currrentIndex!=0){
-    const randomIndex = Math.floor(Math.random()*currentIndex);
-    currentIndex--;
-    [arr[currentIndex], arr[randomIndex]]=[arr[randomIndex], arr[currentIndex]];
-  }
-  return arr;
+    while (currentIndex != 0) { // Fix: typo in currrentIndex
+        const randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+        [arr[currentIndex], arr[randomIndex]] = [arr[randomIndex], arr[currentIndex]];
+    }
+    return arr;
 }
+
+// Call the function to see output
+startGame();
